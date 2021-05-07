@@ -10,6 +10,8 @@ import { PostTag } from './../../entities/postTag';
 import { Tag } from './../../entities/tag';
 import { User } from './../../entities/user';
 import { Post } from 'src/entities/post';
+import { Carousel } from 'src/entities/carousel';
+import { ContentSlide } from 'src/entities/contentSlide';
 
 const namespace = cls.createNamespace('ENROLMENT_APPLICANTS_SERVICE');
 
@@ -75,7 +77,9 @@ export const databaseProvider = {
      PostTag,
      Tag,
      User,
-     Post
+     Post,
+     Carousel,
+     ContentSlide
     ]);
     return sequelize.sync({ force: false });
   },
