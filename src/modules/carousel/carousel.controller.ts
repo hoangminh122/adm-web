@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from "@nestjs/common";
-import { ApiOperation } from "@nestjs/swagger";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import { CarouselService } from './carousel.service';
 import { CreateCarouselDto } from "./dto/carousel.dto";
 
 @Controller('carousel')
+@ApiTags('carousel')
 export class CarouselController {
     constructor(
         private readonly carouselService:CarouselService
@@ -37,7 +38,5 @@ export class CarouselController {
       const result = await this.carouselService.deleteComment(id);
       return { success: result };
     }
-  }
-  
 
 }

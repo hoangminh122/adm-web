@@ -13,6 +13,7 @@ import { User } from './../../entities/user';
 import { Post } from 'src/entities/post';
 import { Carousel } from 'src/entities/carousel';
 import { ContentSlide } from 'src/entities/contentSlide';
+import { Files } from 'src/entities/file';
 
 const namespace = cls.createNamespace('ENROLMENT_APPLICANTS_SERVICE');
 
@@ -80,7 +81,8 @@ export const databaseProvider = {
      User,
      Post,
      Carousel,
-     ContentSlide
+     ContentSlide,
+     Files
     ]);
     return sequelize.sync({ force: false });
   },

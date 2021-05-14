@@ -1,7 +1,12 @@
 import { Carousel } from "src/entities/carousel";
-import { Category } from "src/entities/category";
+import { Files } from "src/entities/file";
 
 export const carouselRepository = {
     provide:'CarouselRepository',
     useValue:Carousel
+}
+
+export const filesRepository = {
+    provide:'FilesRepository',
+    useValue:Files
 }
