@@ -1,0 +1,18 @@
+export const ARR_EXTENDSION_ALLOW_UPLOAD = [
+    '.jpg',
+    '.xlsx',
+    '.pdf',
+    '.doc',
+    '.docx',
+    '.xls',
+    '.csv',
+    '.txt',
+    '.rtf',
+    '.zip',
+    '.mpg',
+    '.flv',
+    '.avi',
+    '.jpeg',
+    '.png',
+    '.gif',
+  ];

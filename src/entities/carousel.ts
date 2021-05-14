@@ -1,9 +1,9 @@
+import { Column, DataType, IsUUID, PrimaryKey,Model, Table, HasMany, CreatedAt, DeletedAt} from "sequelize-typescript";
 import { Sequelize } from "sequelize";
-import { Column, DataType, IsUUID, PrimaryKey,Model, Table, HasMany} from "sequelize-typescript";
 import { ContentSlide } from "./contentSlide";
 
 @Table({ tableName: 'carousel', timestamps: false })
-export class Carousel extends Model<Carousel> {
+export class Carousel extends Model {
     @IsUUID(4)
     @PrimaryKey
     @Column({
@@ -22,11 +22,32 @@ export class Carousel extends Model<Carousel> {
         allowNull:false,
         type:DataType.INTEGER
     })
-    order:BigInt;
+    order:number;
 
     @HasMany(() => ContentSlide, {
         onDelete: 'RESTRICT',
         onUpdate: 'CASCADE',
       })
-      contents: ContentSlide[];
+      contentSlides: ContentSlide[];
+
+    @CreatedAt
+    @Column({
+      field: 'created_date',
+      allowNull: true
+      
+    })
+    createdDate?: Date;
+
+    @Column({
+      field: 'updated_at',
+      allowNull: true,
+    })
+    updatedAt?: Date;
+  
+    @DeletedAt
+    @Column({
+      field: 'deleted_date',
+      allowNull: true,
+    })
+    deletedDate?: Date;
 }

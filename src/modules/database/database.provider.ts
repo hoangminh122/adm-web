@@ -1,4 +1,5 @@
-import * as cls from 'continuation-local-storage';
+// import * as cls from 'continuation-local-storage';
+import * as cls from 'cls-hooked';
 import { Sequelize } from 'sequelize-typescript';
 import { Op } from 'sequelize';
 import { Category } from 'src/entities/category';
@@ -66,7 +67,7 @@ export const databaseProvider = {
       default:
         config = databaseConfig.development;
     }
-    //(Sequelize as any).__proto__.useCLS(namespace);
+    (Sequelize as any).__proto__.useCLS(namespace);
 
     const sequelize = new Sequelize({ ...config, operatorsAliases });
     sequelize.addModels([

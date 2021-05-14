@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 import { Column, DataType, IsUUID, PrimaryKey,Model, Table, ForeignKey} from "sequelize-typescript";
 import { Carousel } from "./carousel";
 
-@Table({ tableName: 'content-slide', timestamps: false })
+@Table({ tableName: 'content-slide', updatedAt: false })
 export class ContentSlide extends Model<ContentSlide> {
     @IsUUID(4)
     @PrimaryKey
